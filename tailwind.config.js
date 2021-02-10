@@ -20,8 +20,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    // Adds support for different colors for 4 sides of border
-    ({ addUtilities, e, theme, variants }) => {
+    // Adds support for different colors for 4 sides of borders
+    ({ addUtilities, theme, variants }) => {
       const colors = flattenColorPalette(theme('borderColor'));
       delete colors['default'];
       

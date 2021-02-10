@@ -1,6 +1,6 @@
 <template>
     <div class="window w-full fixed bottom-0 h-10 px-1 flex items-center justify-between">
-        <WinButton 
+        <StartButton 
             text="Start" 
             icon="/assets/windows-logo.png" 
             v-on:click="this.$emit('toggle-menu')"/>
@@ -9,13 +9,13 @@
 </template>
 
 <script>
-    import WinButton from './WinButton';
+    import StartButton from './StartButton';
     import Clock from './Clock';
 
     export default {
         name: 'Taskbar',
         components: {
-            WinButton,
+            StartButton,
             Clock,
         },
         emits: ['toggle-menu'],

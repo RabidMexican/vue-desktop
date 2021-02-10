@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'WinButton',
+        name: 'StartButton',
         props: {
             text: {
                 type: String,

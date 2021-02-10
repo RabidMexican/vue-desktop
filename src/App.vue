@@ -9,8 +9,8 @@
 </template>
 
 <script>
-    import StartMenu from './components/StartMenu'
-    import Taskbar from './components/Taskbar';
+    import StartMenu from './components/taskbar/StartMenu'
+    import Taskbar from './components/taskbar/Taskbar';
     import Folder from './components/Folder'
 
     export default {
@@ -21,9 +21,9 @@
             Folder,
         },
         data() {
-          return {
-            menuOpen: false,
-          }
+            return {
+                menuOpen: false,
+            }
         }
     }
 </script>
