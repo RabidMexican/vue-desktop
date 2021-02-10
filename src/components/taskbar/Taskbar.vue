@@ -1,9 +1,6 @@
 <template>
     <div class="window w-full fixed bottom-0 h-10 px-1 flex items-center justify-between">
-        <StartButton 
-            text="Start" 
-            icon="/assets/windows-logo.png" 
-            v-on:click="this.$emit('toggle-menu')"/>
+        <StartButton v-on:click="this.$emit('toggle-menu')"/>
         <Clock/>
     </div>
 </template>

@@ -5,17 +5,17 @@
                 {{ title }}
             </p>
         </div>
-        <div class="menu-items w-48 py-4">
-            <div>Programs</div>
-            <div>Favourites</div>
-            <div>Documents</div>
-            <div>Settings</div>
-            <div>Find</div>
-            <div>Help</div>
-            <div>Run</div>
-            <div>Log Off</div>
-            <div>Shut Down</div>
-        </div>
+        <ul class="w-48">
+            <li>Programs</li>
+            <li>Favourites</li>
+            <li>Documents</li>
+            <li>Settings</li>
+            <li>Find</li>
+            <li>Help</li>
+            <li>Run</li>
+            <li>Log Off</li>
+            <li>Shut Down</li>
+        </ul>
     </div>
 </template>
 
@@ -30,18 +30,18 @@
         },
         data() {
             return {
-                title: 'RabidOS \'98'
+                title: 'RabidOS 98'
             }
         }
     }
 </script>
 
 <style scoped>
-    .menu-items div {
-        height:48px;
-        padding: 0 12px;
+    li {
+        height: 48px;
+        padding: 0.5rem;
     }
-    .menu-items div:hover {
+    li:hover {
         background-color: #000080;
         cursor: pointer;
         color: white;

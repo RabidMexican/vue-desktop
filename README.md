@@ -1,5 +1,8 @@
 # vue-desktop
-Experience a Windows 95 desktop experience in your web browser.
+Experience a Windows 98 desktop experience in your web browser.
+
+## Icons 
+https://win98icons.alexmeub.com/
 
 ## Project setup
 ```
