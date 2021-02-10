@@ -8,4 +8,9 @@
             border-t-window-light border-l-window-light 
             border-b-window-dark border-r-window-dark;
     }
+    .cutout {
+        @apply border-2 bg-window-main 
+        border-t-window-dark border-l-window-dark 
+        border-b-window-light border-r-window-light;
+    }
 }
