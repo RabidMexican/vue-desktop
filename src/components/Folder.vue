@@ -20,7 +20,7 @@
 </script>
 
 <style scoped>
-    .img:hover {
+    img:hover {
         cursor: pointer;
     }
 </style>
