@@ -10,7 +10,7 @@
     }
     .cutout {
         @apply border-2 bg-window-main 
-        border-t-window-dark border-l-window-dark 
-        border-b-window-light border-r-window-light;
+            border-t-window-dark border-l-window-dark 
+            border-b-window-light border-r-window-light;
     }
 }

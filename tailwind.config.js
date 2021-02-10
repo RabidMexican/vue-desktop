@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         desktop: '#008080',
+        highlight: '#000080',
         window: {
           main: '#c0c0c0',
           light: '#dfdfdf',

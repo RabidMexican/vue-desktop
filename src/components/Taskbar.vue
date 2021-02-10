@@ -1,6 +1,9 @@
 <template>
     <div class="window w-full fixed bottom-0 h-10 px-1 flex items-center justify-between">
-        <WinButton text="Start" icon="/assets/windows-logo.png"/>
+        <WinButton 
+            text="Start" 
+            icon="/assets/windows-logo.png" 
+            v-on:click="this.$emit('toggle-menu')"/>
         <Clock/>
     </div>
 </template>
@@ -14,6 +17,7 @@
         components: {
             WinButton,
             Clock,
-        }
+        },
+        emits: ['toggle-menu'],
     }
 </script>
