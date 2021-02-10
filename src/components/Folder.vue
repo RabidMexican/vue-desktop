@@ -1,6 +1,6 @@
 <template>
     <div class="w-24 p-2 text-center">
-        <img src="/assets/folder.png" :alt="name" class="folder w-12 m-auto">
+        <img src="@/assets/folder.png" :alt="name" class="folder w-12 m-auto">
         <p class="text-center text-gray-200">
             {{ name }}
         </p>
