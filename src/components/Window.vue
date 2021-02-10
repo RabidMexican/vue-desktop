@@ -2,7 +2,7 @@
     <div v-if="visible" ref="window" class="window absolute w-48">
         <div class="bg-highlight pl-4 pr-1 py-1 font-bold text-sm flex items-center">
             <header class="text-gray-200" v-on:mousedown="dragMouseDown">{{ name }}</header>
-            <button class="window h-6 w-6 font-bold ml-auto" @click="help">?</button>
+            <button class="window h-6 w-6 font-bold ml-auto mr-1" @click="help">?</button>
             <button class="window h-6 w-6 font-bold" @click="visible=false">X</button>
         </div>
         <div class="p-2">
@@ -29,7 +29,7 @@
         },
         methods: {
             help: function() {
-                alert("Look... ike, honestly, what could you actually need help with?")
+                alert("Look... I mean... like, honestly, what could you actually need help with?")
             },
             dragMouseDown: function (event) {
                 event.preventDefault()

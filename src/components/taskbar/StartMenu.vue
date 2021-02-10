@@ -6,15 +6,43 @@
             </p>
         </div>
         <ul class="w-48">
-            <li>Programs</li>
-            <li>Favourites</li>
-            <li>Documents</li>
-            <li>Settings</li>
-            <li>Find</li>
-            <li>Help</li>
-            <li>Run</li>
-            <li>Log Off</li>
-            <li>Shut Down</li>
+            <li>
+                <img src="@/assets/menu-icons/program.png">
+                <span class="pl-2">Programs</span>
+            </li>
+            <li>
+                <img src="@/assets/menu-icons/favorite.png">
+                <span class="pl-2">Favorites</span>
+            </li>
+            <li>
+                <img src="@/assets/menu-icons/document.png">
+                <span class="pl-2">Documents</span>
+            </li>
+            
+            <li>
+                <img src="@/assets/menu-icons/settings.png">
+                <span class="pl-2">Settings</span>
+            </li>
+            <li>
+                <img src="@/assets/menu-icons/find.png">
+                <span class="pl-2">Find</span>
+            </li>
+            <li>
+                <img src="@/assets/menu-icons/help.png">
+                <span class="pl-2">Help</span>
+            </li>
+            <li>
+                <img src="@/assets/menu-icons/run.png">
+                <span class="pl-2">Run</span>
+            </li>
+            <li>
+                <img src="@/assets/menu-icons/logout.png">
+                <span class="pl-2">Log Off</span>
+            </li>
+            <li>
+                <img src="@/assets/menu-icons/shutdown.png">
+                <span class="pl-2">Shut Down</span>
+            </li>
         </ul>
     </div>
 </template>
@@ -40,10 +68,15 @@
     li {
         height: 48px;
         padding: 0.5rem;
+        display: flex;
+        align-items: center;
     }
     li:hover {
         background-color: #000080;
         cursor: pointer;
         color: white;
+    }
+    img {
+        height: 2rem;
     }
 </style>
