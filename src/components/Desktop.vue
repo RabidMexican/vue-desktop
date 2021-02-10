@@ -1,11 +1,11 @@
 <template>
-  <div class="h-screen bg-backgroundaaa">
-      
-  </div>
+    <div class="h-screen bg-desktop">
+        
+    </div>
 </template>
 
 <script>
-  export default {
-    name: 'Desktop',
-  }
+    export default {
+        name: 'Desktop',
+    }
 </script>

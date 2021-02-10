@@ -1,4 +1,5 @@
-# hello-world
+# vue-desktop
+Experience a Windows 95 desktop experience in your web browser.
 
 ## Project setup
 ```

@@ -4,6 +4,8 @@
 
 @layer base {
     .window {
-        @apply border-t-2;
+        @apply border-2 bg-window-main 
+            border-t-window-light border-l-window-light 
+            border-b-window-dark border-r-window-dark;
     }
 }
