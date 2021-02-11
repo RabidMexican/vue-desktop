@@ -2,7 +2,7 @@
     <div
         ref="window"
         v-if="visible"  
-        class="window absolute w-48 resize overflow-hidden min-w-md min-h-xs"
+        class="window absolute w-48 resize overflow-hidden min-w-md min-h-xs z-10"
         :style="'top:' + posY + 'rem; right: ' + posX + 'rem;'">
         <div class="bg-highlight pl-4 pr-1 py-1 font-bold text-sm flex items-center">
             <header class="text-gray-200" v-on:mousedown="dragMouseDown">{{ name }}</header>

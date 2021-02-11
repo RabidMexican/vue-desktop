@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    body {
+        @apply overflow-hidden;
+    }
     .window {
         @apply border-2 bg-window-main 
             border-t-window-light border-l-window-light 
