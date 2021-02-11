@@ -1,12 +1,14 @@
 <template>
-    <div v-if="visible" ref="window" class="window absolute w-48">
+    <div v-if="visible" ref="window" class="window absolute w-48 resize overflow-hidden min-w-md min-h-sm">
         <div class="bg-highlight pl-4 pr-1 py-1 font-bold text-sm flex items-center">
             <header class="text-gray-200" v-on:mousedown="dragMouseDown">{{ name }}</header>
             <button class="window h-6 w-6 font-bold ml-auto mr-1" @click="help">?</button>
             <button class="window h-6 w-6 font-bold" @click="visible=false">X</button>
         </div>
-        <div class="p-2">
-            <slot/>
+        <div class="h-full w-full cutout">
+            <div class="h-full w-full bg-gray-200 p-2">
+                <slot/>
+            </div>
         </div>
     </div>
 </template>

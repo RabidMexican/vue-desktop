@@ -1,12 +1,12 @@
 <template>
     <div class="h-screen bg-desktop">
         <Window name="A Window." class="top-12 right-12">
-            <h3>A Window</h3>
-            <p>This is a window</p>
+            <Folder name="Downloads"/>
+            <Folder name="tmp"/>
         </Window>
-        <Folder name="Documents"/>
-        <Folder name="Ironing"/>
-        <Folder name="Photos"/>
+        <Folder name="Documents" :light="true"/>
+        <Folder name="Ironing" :light="true"/>
+        <Folder name="Photos" :light="true"/>
         <StartMenu class="absolute bottom-10" :open="menuOpen"/>
         <Taskbar @toggle-menu="menuOpen = !menuOpen"/>
     </div>

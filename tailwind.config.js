@@ -14,6 +14,20 @@ module.exports = {
           dark: '#808080',
         }
       },
+      minWidth: {
+        'xs': '2rem',
+        'sm': '5rem',
+        'md': '10rem',
+        'lg': '20rem',
+        'xl': '30rem',
+       },
+       minHeight: {
+        'xs': '2rem',
+        'sm': '5rem',
+        'md': '10rem',
+        'lg': '20rem',
+        'xl': '30rem',
+       }
     }
   },
   variants: {
