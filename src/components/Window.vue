@@ -2,7 +2,8 @@
     <div
         ref="window"
         v-if="visible"  
-        :class="'window absolute w-48 resize overflow-hidden min-w-md min-h-xs top-' + posY + ' right-' + posX">
+        class="window absolute w-48 resize overflow-hidden min-w-md min-h-xs"
+        :style="'top:' + posY + 'rem; right: ' + posX + 'rem;'">
         <div class="bg-highlight pl-4 pr-1 py-1 font-bold text-sm flex items-center">
             <header class="text-gray-200" v-on:mousedown="dragMouseDown">{{ name }}</header>
             <button class="window h-6 w-6 font-bold ml-auto mr-1" @click="help">?</button>

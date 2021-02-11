@@ -37,7 +37,7 @@
         data() {
             return {
                 currentId: 3,
-                windowPos: 12,
+                windowPos: 1,
                 menuOpen: false,
                 windows: [],
             }
@@ -55,9 +55,7 @@
             },
             update() {
                 this.currentId++
-                this.windowPos += 4
-                if(this.windowPos > 64)
-                    this.windowPos = 12
+                this.windowPos += 0.5
             },
         }
     }
