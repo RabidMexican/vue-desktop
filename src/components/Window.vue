@@ -1,5 +1,8 @@
 <template>
-    <div v-if="visible" ref="window" class="window absolute w-48 resize overflow-hidden min-w-md min-h-sm">
+    <div
+        ref="window"
+        v-if="visible"  
+        :class="'window absolute w-48 resize overflow-hidden min-w-md min-h-xs top-' + posY + ' right-' + posX">
         <div class="bg-highlight pl-4 pr-1 py-1 font-bold text-sm flex items-center">
             <header class="text-gray-200" v-on:mousedown="dragMouseDown">{{ name }}</header>
             <button class="window h-6 w-6 font-bold ml-auto mr-1" @click="help">?</button>
@@ -19,6 +22,14 @@
         props: {
             name: {
                 type: String,
+                required: true,
+            },
+            posX: {
+                type: Number,
+                required: true,
+            },
+            posY: {
+                type: Number,
                 required: true,
             }
         },

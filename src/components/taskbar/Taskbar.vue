@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    import StartButton from './StartButton';
-    import Clock from './Clock';
+    import StartButton from './StartButton'
+    import Clock from './Clock'
 
     export default {
         name: 'Taskbar',

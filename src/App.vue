@@ -1,12 +1,20 @@
 <template>
     <div class="h-screen bg-desktop">
-        <Window name="A Window." class="top-12 right-12">
-            <Folder name="Downloads"/>
-            <Folder name="tmp"/>
+        <Window 
+            v-for="window in windows" 
+            v-bind:key="window.id" 
+            :name="window.name" 
+            :posX="window.pos"
+            :posY="window.pos">
+            <Folder
+                @open-window="openWindow"
+                v-for="folder in window.folders" 
+                v-bind:key="folder.id"
+                :name="folder.name"/>
         </Window>
-        <Folder name="Documents" :light="true"/>
-        <Folder name="Ironing" :light="true"/>
-        <Folder name="Photos" :light="true"/>
+        <Folder name="Documents" @open-window="openWindow" :light="true"/>
+        <Folder name="Ironing" @open-window="openWindow" :light="true"/>
+        <Folder name="Photos" @open-window="openWindow" :light="true"/>
         <StartMenu class="absolute bottom-10" :open="menuOpen"/>
         <Taskbar @toggle-menu="menuOpen = !menuOpen"/>
     </div>
@@ -14,7 +22,7 @@
 
 <script>
     import StartMenu from './components/taskbar/StartMenu'
-    import Taskbar from './components/taskbar/Taskbar';
+    import Taskbar from './components/taskbar/Taskbar'
     import Folder from './components/Folder'
     import Window from './components/Window'
 
@@ -28,8 +36,29 @@
         },
         data() {
             return {
+                currentId: 3,
+                windowPos: 12,
                 menuOpen: false,
+                windows: [],
             }
+        },
+        methods: {
+            openWindow(data) {
+                let window = {
+                    id: this.currentId,
+                    pos: this.windowPos,
+                    name: data.name,
+                    folders: data.folders
+                }
+                this.windows.push(window)
+                this.update()
+            },
+            update() {
+                this.currentId++
+                this.windowPos += 4
+                if(this.windowPos > 64)
+                    this.windowPos = 12
+            },
         }
     }
 </script>

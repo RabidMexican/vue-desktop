@@ -18,7 +18,6 @@
                 <img src="@/assets/menu-icons/document.png">
                 <span class="pl-2">Documents</span>
             </li>
-            
             <li>
                 <img src="@/assets/menu-icons/settings.png">
                 <span class="pl-2">Settings</span>
