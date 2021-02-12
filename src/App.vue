@@ -22,7 +22,6 @@
 
 <script>
     import Folder from './components/Folder'
-    import RightClickMenu from './components/RightClickMenu'
     import StartMenu from './components/taskbar/StartMenu'
     import Taskbar from './components/taskbar/Taskbar'
     import Window from './components/Window'
@@ -33,7 +32,6 @@
             Folder,
             StartMenu,
             Taskbar,
-            RightClickMenu,
             Window,
         },
         data() {
