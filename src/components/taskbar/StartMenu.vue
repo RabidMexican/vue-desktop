@@ -6,49 +6,24 @@
             </p>
         </div>
         <ul class="w-48">
-            <li>
-                <img src="@/assets/menu-icons/program.png">
-                <span class="pl-2">Programs</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/favorite.png">
-                <span class="pl-2">Favorites</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/document.png">
-                <span class="pl-2">Documents</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/settings.png">
-                <span class="pl-2">Settings</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/find.png">
-                <span class="pl-2">Find</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/help.png">
-                <span class="pl-2">Help</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/run.png">
-                <span class="pl-2">Run</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/logout.png">
-                <span class="pl-2">Log Off</span>
-            </li>
-            <li>
-                <img src="@/assets/menu-icons/shutdown.png">
-                <span class="pl-2">Shut Down</span>
-            </li>
+            <MenuItem 
+                v-for="item in items"
+                v-bind:key="item.name"
+                :text="item.text"
+                :image="item.image"
+                :list="item.list" />
         </ul>
     </div>
 </template>
 
 <script>
+    import MenuItem from './MenuItem'
+    
     export default {
         name: 'StartMenu',
+        components: {
+            MenuItem,
+        },
         props: {
             open: {
                 type: Boolean,
@@ -57,7 +32,74 @@
         },
         data() {
             return {
-                title: 'RabidOS 98'
+                title: 'RabidOS 98',
+                items: [
+                    {
+                        text: 'Programs',
+                        image: require('@/assets/menu-icons/program.png'),
+                        list: [
+                            'Word',
+                            'Minesweeper',
+                            'Calculator',
+                            'WinDir',
+                            'Putty SSH',
+                        ]
+                    },
+                     {
+                        text: 'Favorites',
+                        image: require('@/assets/menu-icons/favorite.png'),
+                        list: [
+                            'My Favorites',
+                            'All Favorites',
+                            'Public Favorites',
+                            'Group Favorites',
+                        ]
+                    },
+                     {
+                        text: 'Documents',
+                        image: require('@/assets/menu-icons/document.png'),
+                        list: [
+                            'School',
+                            'Work',
+                            'Misc',
+                            'Downloads',
+                            'Temp',
+                        ]
+                    },
+                     {
+                        text: 'Settings',
+                        image: require('@/assets/menu-icons/settings.png'),
+                        list: [
+                            'Control Panel',
+                            'Printers',
+                            'Taskbar & Start Menu',
+                            'Folder Options...',
+                            'Active Desktop',
+                            'Windows Update',
+                        ]
+                    },
+                     {
+                        text: 'Find',
+                        image: require('@/assets/menu-icons/find.png')
+                    },
+                     {
+                        text: 'Help',
+                        image: require('@/assets/menu-icons/help.png')
+                    },
+                    {
+                        text: 'Run',
+                        image: require('@/assets/menu-icons/run.png')
+                    },
+                    {
+                        text: 'Log Off',
+                        image: require('@/assets/menu-icons/logout.png')
+                    },
+                    {
+                        text: 'Shutdown',
+                        image: require('@/assets/menu-icons/shutdown.png')
+                    },
+                     
+                ]
             }
         }
     }
@@ -74,8 +116,5 @@
         background-color: #000080;
         cursor: pointer;
         color: white;
-    }
-    img {
-        height: 2rem;
     }
 </style>
