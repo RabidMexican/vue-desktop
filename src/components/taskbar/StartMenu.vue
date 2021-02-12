@@ -7,7 +7,21 @@
         </div>
         <ul class="w-48">
             <MenuItem 
-                v-for="item in items"
+                v-for="item in items.top"
+                v-bind:key="item.name"
+                :text="item.text"
+                :image="item.image"
+                :list="item.list" />
+            <div class="cutout h-0 my-2"/>
+            <MenuItem 
+                v-for="item in items.middle"
+                v-bind:key="item.name"
+                :text="item.text"
+                :image="item.image"
+                :list="item.list" />
+            <div class="cutout h-0 my-2"/>
+            <MenuItem 
+                v-for="item in items.bottom"
                 v-bind:key="item.name"
                 :text="item.text"
                 :image="item.image"
@@ -18,7 +32,7 @@
 
 <script>
     import MenuItem from './MenuItem'
-    
+
     export default {
         name: 'StartMenu',
         components: {
@@ -33,73 +47,79 @@
         data() {
             return {
                 title: 'RabidOS 98',
-                items: [
-                    {
-                        text: 'Programs',
-                        image: require('@/assets/menu-icons/program.png'),
-                        list: [
-                            'Word',
-                            'Minesweeper',
-                            'Calculator',
-                            'WinDir',
-                            'Putty SSH',
-                        ]
-                    },
-                     {
-                        text: 'Favorites',
-                        image: require('@/assets/menu-icons/favorite.png'),
-                        list: [
-                            'My Favorites',
-                            'All Favorites',
-                            'Public Favorites',
-                            'Group Favorites',
-                        ]
-                    },
-                     {
-                        text: 'Documents',
-                        image: require('@/assets/menu-icons/document.png'),
-                        list: [
-                            'School',
-                            'Work',
-                            'Misc',
-                            'Downloads',
-                            'Temp',
-                        ]
-                    },
-                     {
-                        text: 'Settings',
-                        image: require('@/assets/menu-icons/settings.png'),
-                        list: [
-                            'Control Panel',
-                            'Printers',
-                            'Taskbar & Start Menu',
-                            'Folder Options...',
-                            'Active Desktop',
-                            'Windows Update',
-                        ]
-                    },
-                     {
-                        text: 'Find',
-                        image: require('@/assets/menu-icons/find.png')
-                    },
-                     {
-                        text: 'Help',
-                        image: require('@/assets/menu-icons/help.png')
-                    },
-                    {
-                        text: 'Run',
-                        image: require('@/assets/menu-icons/run.png')
-                    },
-                    {
-                        text: 'Log Off',
-                        image: require('@/assets/menu-icons/logout.png')
-                    },
-                    {
-                        text: 'Shutdown',
-                        image: require('@/assets/menu-icons/shutdown.png')
-                    },
-                     
-                ]
+                items: {
+                    top: [
+                        {
+                            text: 'Programs',
+                            image: require('@/assets/menu-icons/program.png'),
+                            list: [
+                                'Word',
+                                'Minesweeper',
+                                'Calculator',
+                                'WinDir',
+                                'Putty SSH',
+                            ]
+                        },
+                        {
+                            text: 'Favorites',
+                            image: require('@/assets/menu-icons/favorite.png'),
+                            list: [
+                                'My Favorites',
+                                'All Favorites',
+                                'Public Favorites',
+                                'Group Favorites',
+                            ]
+                        },
+                        {
+                            text: 'Documents',
+                            image: require('@/assets/menu-icons/document.png'),
+                            list: [
+                                'School',
+                                'Work',
+                                'Misc',
+                                'Downloads',
+                                'Temp',
+                            ]
+                        },
+                        {
+                            text: 'Settings',
+                            image: require('@/assets/menu-icons/settings.png'),
+                            list: [
+                                'Control Panel',
+                                'Printers',
+                                'Taskbar & Start Menu',
+                                'Folder Options...',
+                                'Active Desktop',
+                                'Windows Update',
+                            ]
+                        },
+                    ],
+                    middle: [
+                        {
+                            text: 'Find',
+                            image: require('@/assets/menu-icons/find.png')
+                        },
+                        {
+                            text: 'Help',
+                            image: require('@/assets/menu-icons/help.png')
+                        },
+                        {
+                            text: 'Run',
+                            image: require('@/assets/menu-icons/run.png')
+                        },
+                        
+                    ],
+                    bottom: [
+                        {
+                            text: 'Log Off',
+                            image: require('@/assets/menu-icons/logout.png')
+                        },
+                        {
+                            text: 'Shutdown',
+                            image: require('@/assets/menu-icons/shutdown.png')
+                        },
+                    ]
+                }
             }
         }
     }
