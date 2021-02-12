@@ -21,17 +21,19 @@
 </template>
 
 <script>
+    import Folder from './components/Folder'
+    import RightClickMenu from './components/RightClickMenu'
     import StartMenu from './components/taskbar/StartMenu'
     import Taskbar from './components/taskbar/Taskbar'
-    import Folder from './components/Folder'
     import Window from './components/Window'
 
     export default {
         name: 'Desktop',
         components: {
+            Folder,
             StartMenu,
             Taskbar,
-            Folder,
+            RightClickMenu,
             Window,
         },
         data() {

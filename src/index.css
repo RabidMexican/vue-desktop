@@ -4,7 +4,7 @@
 
 @layer base {
     body {
-        @apply overflow-hidden;
+        @apply overflow-hidden h-screen;
     }
     .window {
         @apply border-2 bg-window-main 

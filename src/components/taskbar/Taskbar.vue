@@ -1,5 +1,5 @@
 <template>
-    <div class="window w-full fixed bottom-0 h-10 px-1 flex items-center justify-between">
+    <div class="window w-full absolute bottom-0 h-10 px-1 flex items-center justify-between">
         <StartButton v-on:click="this.$emit('toggle-menu')"/>
         <Clock/>
     </div>
