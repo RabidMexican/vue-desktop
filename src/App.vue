@@ -12,15 +12,18 @@
                 v-bind:key="folder.id"
                 :name="folder.name"/>
         </Window>
-        <Folder name="Documents" @open-window="openWindow" :light="true"/>
-        <Folder name="Ironing" @open-window="openWindow" :light="true"/>
-        <Folder name="Photos" @open-window="openWindow" :light="true"/>
+        <Folder 
+            v-for="folder in folders" 
+            v-bind:key="folder.name" 
+            :name="folder.name"
+            @open-window="openWindow" :light="true"/>
         <StartMenu 
             class="absolute bottom-10" 
             :open="menuOpen"/>
         <Taskbar 
             @toggle-menu="menuOpen = !menuOpen"/>
-        <RightClickMenu 
+        <RightClickMenu
+            @sort-desktop="sortFolders()"
             :show="rightClickOpen" 
             :x="rightClickX" 
             :y="rightClickY"/>
@@ -52,6 +55,16 @@
                 rightClickX: 0,
                 rightClickY: 0,
                 windows: [],
+                folders: [
+                    { name: 'Documents' },
+                    { name: 'Ironing' },
+                    { name: 'Photos' },
+                    { name: 'Abc' },
+                    { name: 'Zebra' },
+                    { name: 'Yacht' },
+                    { name: 'Bumblebee' }
+                ],
+                folderOrder: true,
             }
         },
         methods: {
@@ -73,6 +86,21 @@
             },
             closeRightClickMenu() {
                 this.rightClickOpen = false
+            },
+            sortFolders() {
+                if(this.folderOrder) this.folders.sort(this.compareAsc)
+                else this.folders.sort(this.compareDesc)
+                this.folderOrder = !this.folderOrder
+            },
+            compareAsc( a, b ) {
+                if ( a.name < b.name ) return -1
+                if ( a.name > b.name ) return 1
+                return 0
+            },
+            compareDesc( a, b ) {
+                if ( a.name > b.name ) return -1
+                if ( a.name < b.name ) return 1
+                return 0
             }
         },
         mounted() {
