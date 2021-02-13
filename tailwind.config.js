@@ -36,8 +36,8 @@ module.exports = {
   plugins: [
     // Adds support for different colors for 4 sides of borders
     ({ addUtilities, theme, variants }) => {
-      const colors = flattenColorPalette(theme('borderColor'));
-      delete colors['default'];
+      const colors = flattenColorPalette(theme('borderColor'))
+      delete colors['default']
       
       const colorMap = Object.keys(colors)
         .map(color => ({
@@ -45,10 +45,10 @@ module.exports = {
           [`.border-r-${color}`]: {borderRightColor: colors[color]},
           [`.border-b-${color}`]: {borderBottomColor: colors[color]},
           [`.border-l-${color}`]: {borderLeftColor: colors[color]},
-        }));
-      const utilities = Object.assign({}, ...colorMap);
+        }))
+      const utilities = Object.assign({}, ...colorMap)
 
-      addUtilities(utilities, variants('borderColor'));
+      addUtilities(utilities, variants('borderColor'))
     },
   ],
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen bg-desktop">
+    <div class="h-screen bg-desktop" @mouseup.right="openRightClickMenu" @click="closeRightClickMenu"  onselectstart="return false">
         <Window 
             v-for="window in windows" 
             v-bind:key="window.id" 
@@ -15,13 +15,21 @@
         <Folder name="Documents" @open-window="openWindow" :light="true"/>
         <Folder name="Ironing" @open-window="openWindow" :light="true"/>
         <Folder name="Photos" @open-window="openWindow" :light="true"/>
-        <StartMenu class="absolute bottom-10" :open="menuOpen"/>
-        <Taskbar @toggle-menu="menuOpen = !menuOpen"/>
+        <StartMenu 
+            class="absolute bottom-10" 
+            :open="menuOpen"/>
+        <Taskbar 
+            @toggle-menu="menuOpen = !menuOpen"/>
+        <RightClickMenu 
+            :show="rightClickOpen" 
+            :x="rightClickX" 
+            :y="rightClickY"/>
     </div>
 </template>
 
 <script>
     import Folder from './components/Folder'
+    import RightClickMenu from './components/RightClickMenu'
     import StartMenu from './components/taskbar/StartMenu'
     import Taskbar from './components/taskbar/Taskbar'
     import Window from './components/Window'
@@ -30,6 +38,7 @@
         name: 'Desktop',
         components: {
             Folder,
+            RightClickMenu,
             StartMenu,
             Taskbar,
             Window,
@@ -39,6 +48,9 @@
                 currentId: 3,
                 windowPos: 1,
                 menuOpen: false,
+                rightClickOpen: false,
+                rightClickX: 0,
+                rightClickY: 0,
                 windows: [],
             }
         },
@@ -51,12 +63,23 @@
                     folders: data.folders
                 }
                 this.windows.push(window)
-                this.update()
-            },
-            update() {
                 this.currentId++
                 this.windowPos += 0.5
             },
+            openRightClickMenu(event) {
+                this.rightClickX = event.clientX
+                this.rightClickY = event.clientY
+                this.rightClickOpen = true
+            },
+            closeRightClickMenu() {
+                this.rightClickOpen = false
+            }
+        },
+        mounted() {
+            // disable normal right click
+            window.addEventListener('contextmenu', function (e) {
+                e.preventDefault()
+            }, false);
         }
     }
 </script>

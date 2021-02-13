@@ -1,5 +1,5 @@
 <template>
-    <div v-if="open" class="menu window flex">
+    <div v-show="open" class="menu window flex">
         <div class="relative w-10 bg-highlight p-2 font-bold text-white">
             <p class="whitespace-nowrap absolute -left-7 bottom-12 transform -rotate-90">
                 {{ title }}

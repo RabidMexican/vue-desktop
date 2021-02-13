@@ -68,7 +68,7 @@
                 document.onmouseup = null
                 document.onmousemove = null
             }
-        }
+        },
     }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <menu class="window w-48">
+    <div v-show="show" class="window w-48 text-sm absolute" v-bind:style="{ top:y+'px', left:x+'px' }">
         <ul>
             <li v-for="item in items.top" v-bind:key="item">
                 {{ item }}
@@ -13,12 +13,26 @@
                 {{ item }}
             </li>
         </ul>
-    </menu>
+    </div>
 </template>
 
 <script>
     export default {
         name: 'RightClickMenu',
+        props: {
+            show: {
+                type: Boolean,
+                required: true,
+            },
+            x: {
+                type: Number,
+                required: true,
+            },
+            y: {
+                type: Number,
+                required: true,
+            }
+        },
         data() {
             return {
                 items: {
@@ -37,11 +51,14 @@
                     ],
                 }
             }
-        }
+        },
     }
 </script>
 
 <style scoped>
+    li {
+        padding: 4px 4px;
+    }
     li:hover {
         color: white;
         cursor: pointer;
