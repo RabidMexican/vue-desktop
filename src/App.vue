@@ -15,11 +15,14 @@
                 v-bind:key="folder.id"
                 :name="folder.name"/>
         </Window>
-        <Folder 
-            v-for="folder in folders" 
-            v-bind:key="folder.name" 
-            :name="folder.name"
-            @open-window="openWindow" :light="true"/>
+        <div class="flex flex-wrap">
+            <Folder 
+                v-for="folder in folders" 
+                v-bind:key="folder.name" 
+                :name="folder.name"
+                @open-window="openWindow" :light="true"
+                class=""/>
+        </div>
         <StartMenu 
             class="absolute bottom-10" 
             :open="menuOpen"/>

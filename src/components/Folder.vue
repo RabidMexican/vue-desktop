@@ -1,5 +1,5 @@
 <template>
-    <div class="w-24 p-2 text-center" @dblclick="openWindow()" @click="selected = !selected">
+    <div class="w-24 h-24 p-2 text-center" @dblclick="openWindow()" @click="selected = !selected">
         <img src="@/assets/folder.png" :alt="name" class="w-14 p-2 m-auto mb-1" v-bind:class="{ 'blue' : selected }">
         <p class="text-sm text-center px-1" v-bind:class="{ 'text-gray-200' : light, 'bg-highlight text-gray-200' : selected }">
             {{ name }}
