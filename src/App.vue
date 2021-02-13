@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="h-screen bg-desktop" 
+        class="h-screen bg-desktop flex flex-wrap content-start" 
         @mouseup.right="openRightClickMenu" 
         @click="[closeMenu(), closeRightClickMenu()]">
         <Window 
@@ -15,14 +15,11 @@
                 v-bind:key="folder.id"
                 :name="folder.name"/>
         </Window>
-        <div class="flex flex-wrap">
-            <Folder 
-                v-for="folder in folders" 
-                v-bind:key="folder.name" 
-                :name="folder.name"
-                @open-window="openWindow" :light="true"
-                class=""/>
-        </div>
+        <Folder 
+            v-for="folder in folders" 
+            v-bind:key="folder.name" 
+            :name="folder.name"
+            @open-window="openWindow" :light="true"/>
         <StartMenu 
             class="absolute bottom-10" 
             :open="menuOpen"/>
