@@ -1,5 +1,8 @@
 <template>
-    <div class="h-screen bg-desktop" @mouseup.right="openRightClickMenu" @click="closeRightClickMenu"  onselectstart="return false">
+    <div 
+        class="h-screen bg-desktop" 
+        @mouseup.right="openRightClickMenu" 
+        @click="[closeMenu(), closeRightClickMenu()]">
         <Window 
             v-for="window in windows" 
             v-bind:key="window.id" 
@@ -20,14 +23,13 @@
         <StartMenu 
             class="absolute bottom-10" 
             :open="menuOpen"/>
-        <Taskbar 
-            @toggle-menu="menuOpen = !menuOpen"/>
         <RightClickMenu
             @sort-desktop="sortFolders()"
             :show="rightClickOpen" 
             :x="rightClickX" 
             :y="rightClickY"/>
     </div>
+    <Taskbar @toggle-menu="toggleMenu()"/>
 </template>
 
 <script>
@@ -57,17 +59,28 @@
                 windows: [],
                 folders: [
                     { name: 'Documents' },
-                    { name: 'Ironing' },
                     { name: 'Photos' },
-                    { name: 'Abc' },
-                    { name: 'Zebra' },
-                    { name: 'Yacht' },
-                    { name: 'Bumblebee' }
+                    { name: 'Work' },
+                    { name: 'Backup' },
+                    { name: 'Email' },
+                    { name: 'School' },
+                    { name: 'Files' }
                 ],
                 folderOrder: true,
             }
         },
         methods: {
+            closeAllMenus() {
+                this.closeMenu()
+                this.closeRightClickMenu()
+            },
+            toggleMenu() {
+                this.menuOpen = !this.menuOpen
+            },
+            closeMenu() {
+                console.log("closing menu")
+                this.menuOpen = false
+            },
             openWindow(data) {
                 let window = {
                     id: this.currentId,
